@@ -1,6 +1,7 @@
 package com.example.doctopdf
 
 import android.os.Bundle
+import android.os.Environment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -8,6 +9,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.doctopdf.databinding.ActivityMainBinding
+import com.example.doctopdf.services.FileService
+import java.io.File
 
 class FileManager : AppCompatActivity() {
 
@@ -33,5 +36,9 @@ class FileManager : AppCompatActivity() {
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        val searchDir = arrayListOf<File>(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS))
+
+        val fileNames = FileService.getPDFFiles(searchDir)
     }
 }
