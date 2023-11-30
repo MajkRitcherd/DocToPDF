@@ -1,4 +1,4 @@
-package com.example.doctopdf.ui.createdDocuments
+package com.doctopdf.ui.createdDocuments
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.nearbyShare.NearbyShareFragment">
+    tools:context="com.doctopdf.ui.nearbyShare.NearbyShareFragment">
 
     <TextView
         android:id="@+id/text_created_documents"

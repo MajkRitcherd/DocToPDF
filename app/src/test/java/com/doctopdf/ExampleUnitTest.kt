@@ -1,4 +1,4 @@
-package com.example.doctopdf
+package com.doctopdf
 
 import org.junit.Test
 

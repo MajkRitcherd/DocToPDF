@@ -1,4 +1,4 @@
-package com.example.doctopdf
+package com.doctopdf
 
 import android.os.Bundle
 import android.os.Environment
@@ -9,7 +9,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.doctopdf.databinding.ActivityMainBinding
-import com.example.doctopdf.services.FileService
+import com.doctopdf.services.FileService
+import com.example.doctopdf.R
 import java.io.File
 
 class FileManager : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.example.doctopdf.ui.nearbyShare
+package com.doctopdf.ui.nearbyShare
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

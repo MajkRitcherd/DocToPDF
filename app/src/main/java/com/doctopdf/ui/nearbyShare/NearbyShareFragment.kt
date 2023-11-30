@@ -1,4 +1,4 @@
-package com.example.doctopdf.ui.createdDocuments
+package com.doctopdf.ui.nearbyShare
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.doctopdf.databinding.FragmentCreatedDocumentsBinding
+import com.example.doctopdf.databinding.FragmentNearbyShareBinding
 
-class CreatedDocumentsFragment : Fragment() {
-
-    private var _binding: FragmentCreatedDocumentsBinding? = null
+class NearbyShareFragment : Fragment() {
+    private var _binding: FragmentNearbyShareBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +21,14 @@ class CreatedDocumentsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val createdDocumentsViewModel =
-            ViewModelProvider(this).get(CreatedDocumentsViewModel::class.java)
+        val nearbyShareViewModel =
+            ViewModelProvider(this).get(NearbyShareViewModel::class.java)
 
-        _binding = FragmentCreatedDocumentsBinding.inflate(inflater, container, false)
+        _binding = FragmentNearbyShareBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textCreatedDocuments
-        createdDocumentsViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textNearbyShare
+        nearbyShareViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

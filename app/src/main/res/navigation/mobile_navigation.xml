@@ -6,17 +6,17 @@
     app:startDestination="@id/createdDocumentsFragment">
     <fragment
         android:id="@+id/createdDocumentsFragment"
-        android:name="com.example.doctopdf.ui.createdDocuments.CreatedDocumentsFragment"
+        android:name="com.doctopdf.ui.createdDocuments.CreatedDocumentsFragment"
         android:label="fragment_created_documents"
         tools:layout="@layout/fragment_created_documents" />
     <fragment
         android:id="@+id/nearbyShare"
-        android:name="com.example.doctopdf.ui.nearbyShare.NearbyShareFragment"
+        android:name="com.doctopdf.ui.nearbyShare.NearbyShareFragment"
         android:label="fragment_nearby_share"
         tools:layout="@layout/fragment_nearby_share" />
     <fragment
         android:id="@+id/savedDocumentsFragment"
-        android:name="com.example.doctopdf.ui.savedDocuments.SavedDocumentsFragment"
+        android:name="com.doctopdf.ui.savedDocuments.SavedDocumentsFragment"
         android:label="fragment_saved_documents"
         tools:layout="@layout/fragment_saved_documents" />
 </navigation>

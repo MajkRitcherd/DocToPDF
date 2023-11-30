@@ -1,4 +1,4 @@
-package com.example.doctopdf.ui.savedDocuments
+package com.doctopdf.ui.createdDocuments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.doctopdf.databinding.FragmentSavedDocumentsBinding
+import com.example.doctopdf.databinding.FragmentCreatedDocumentsBinding
 
-class SavedDocumentsFragment : Fragment() {
+class CreatedDocumentsFragment : Fragment() {
 
-    private var _binding: FragmentSavedDocumentsBinding? = null
+    private var _binding: FragmentCreatedDocumentsBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +22,14 @@ class SavedDocumentsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val savedDocumentsViewModel =
-            ViewModelProvider(this).get(SavedDocumentsViewModel::class.java)
+        val createdDocumentsViewModel =
+            ViewModelProvider(this).get(CreatedDocumentsViewModel::class.java)
 
-        _binding = FragmentSavedDocumentsBinding.inflate(inflater, container, false)
+        _binding = FragmentCreatedDocumentsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textSavedDocuments
-        savedDocumentsViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textCreatedDocuments
+        createdDocumentsViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
