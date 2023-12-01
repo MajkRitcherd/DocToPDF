@@ -1,6 +1,7 @@
 package com.doctopdf.helpers
 
 import java.io.File
+import java.text.DecimalFormat
 
 /**
  * Class represents a file item of list view.
@@ -19,20 +20,20 @@ class FileItem (file: File) {
      * @return Returns string in form '{sizeOfFile} {units}]'.
      */
     private fun convertFileSizeToString(size: Long): String {
+        val decimalFormat = DecimalFormat("#.##")
         var fileUnitsIndex = 0
-        var fileSize: Long = size
-        var shouldStop = false
+        var fileSize: Double = size.toDouble()
 
-        while (!shouldStop) {
-            if (fileSize <= 1024) {
-                shouldStop = true
+        while (true) {
+            if (fileSize <= 1000 || fileUnitsIndex >= 3) {
+                break
             } else {
-                fileSize /= 1024
+                fileSize /= 1000
                 fileUnitsIndex += 1
             }
         }
 
-        return "$fileSize ${FileSizeUnits.values()[fileUnitsIndex]}"
+        return "${decimalFormat.format(fileSize)} ${FileSizeUnits.values()[fileUnitsIndex]}"
     }
 
     /**
