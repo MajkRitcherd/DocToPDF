@@ -2,6 +2,8 @@ package com.doctopdf.helpers
 
 import java.io.File
 import java.text.DecimalFormat
+import java.text.SimpleDateFormat
+import java.util.Date
 
 /**
  * Class represents a file item of list view.
@@ -11,7 +13,7 @@ class FileItem (file: File) {
     val name: String = file.name
     var size = file.length()
     val sizeText: String = convertFileSizeToString(file.length())
-    val lastModifiedText: String = file.lastModified().toString()
+    val lastModifiedText: String = convertToDate(file.lastModified())
 
     /**
      * Converts file size to units (B, KB, MB, GB) and returns it as a string.
@@ -34,6 +36,18 @@ class FileItem (file: File) {
         }
 
         return "${decimalFormat.format(fileSize)} ${FileSizeUnits.values()[fileUnitsIndex]}"
+    }
+
+    /**
+     * Converts long to date.
+     * @param lastModified Last modification as Long.
+     * @return Formatted date of last modification.
+     */
+    private fun convertToDate(lastModified: Long): String {
+        val lastModified = Date(lastModified)
+        val dateFormat = SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
+
+        return dateFormat.format(lastModified)
     }
 
     /**
