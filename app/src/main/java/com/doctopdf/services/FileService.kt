@@ -2,10 +2,14 @@ package com.doctopdf.services
 
 import java.io.File
 
-// File service as a singleton
+/**
+ * File service represented as a singleton.
+ */
 object FileService {
     /**
      * Gets list of PDF files from given directories.
+     * @param directories ArrayList of directories to search.
+     * @return List of PDF files.
      */
     fun getPDFFiles(directories: ArrayList<File>): ArrayList<File> {
         val fileNames: ArrayList<File> = arrayListOf()
@@ -19,6 +23,8 @@ object FileService {
 
     /**
      * Get list of PDF files in a given directory.
+     * @param directory Directory to search PDF files in.
+     * @return List of PDF files.
      */
     private fun getPDFFilesFromDirectory(directory: File): ArrayList<File> {
         val pdfPattern = ".pdf"
